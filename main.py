@@ -2,6 +2,7 @@ import requests
 import shutil
 import zipfile
 import os
+import webbrowser
 
 
 def checkpathexists(path: str) -> bool:
@@ -53,7 +54,7 @@ def unzip_wordpress():
 
 def duplicate_file(source, destination):
     shutil.copyfile(source, destination)
-    print("Copying file {} to {} was successful...".format(soure, destination))
+    print("Copying file {} to {} was successful...".format(source, destination))
     return
 
 
@@ -94,6 +95,12 @@ def fill_wp_config():
                                "wordpress/wp-config.php")
     print("All fields replaced")
     return
+
+
+def open_browser():
+    print("Opening Browser")
+    wordpresspath = os.path.abspath("wordpress")
+    webbrowser.open_new_tab(wordpresspath)
 
 
 def start():
