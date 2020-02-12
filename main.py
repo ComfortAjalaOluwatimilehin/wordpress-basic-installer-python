@@ -97,12 +97,6 @@ def fill_wp_config():
     return
 
 
-def open_browser():
-    print("Opening Browser")
-    wordpresspath = os.path.abspath("wordpress")
-    webbrowser.open_new_tab(wordpresspath)
-
-
 def start():
     download_wordpress()
     unzip_wordpress()
